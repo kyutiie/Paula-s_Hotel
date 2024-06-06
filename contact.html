@@ -200,6 +200,17 @@
                                     <label for="promoCode" class="form-label">Promo Code</label>
                                     <input type="text" class="form-control" id="promoCode">
                                 </div>
+                                <div class="mb-3">
+                                    <label for="paymentMode" class="form-label">Mode of Payment</label>
+                                    <select class="form-select" id="paymentMode" required>
+                                        <option value="Cash">Cash</option>
+                                        <option value="Card">Any type of Card</option>
+                                        <option value="GCash">G-Cash</option>
+                                        <option value="PayMaya">Pay Maya</option>
+                                        <option value="BankTransfer">Bank Transfer</option>
+                                        <option value="PayPal">PayPal</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -217,6 +228,10 @@
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
                                     <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">Address</label>
+                                    <input type="address" class="form-control" id="address" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="mobile" class="form-label">Mobile No.</label>
@@ -258,29 +273,23 @@
         </div>
     </footer>
 
- <!-- Success Modal -->
+ 
 <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="successModalLabel">Success</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
             <div class="modal-body">
                 Your reservation is added successfully.
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
+         
         </div>
     </div>
 </div>
 
 <script>
     function showSuccessMessage(event) {
-        event.preventDefault(); // Prevent the default form submission
+        event.preventDefault();
 
-        // Show the success modal
+   
         var successModal = new bootstrap.Modal(document.getElementById('successModal'));
         successModal.show();
     }
